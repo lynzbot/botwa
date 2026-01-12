@@ -182,15 +182,15 @@ function getFlagEmoji(countryCode) {
   return String.fromCodePoint(...codePoints);
 }
 
-   async function getGroupAdmins(participants) {
-  let admins = [];
-  for (let i of participants) {
-    if (i.admin === "superadmin" || i.admin === "admin") {
-      admins.push(i.id); // gunakan i.id, bukan i.jid
+    async function getGroupAdmins(participants) {
+      let admins = [];
+      for (let i of participants) {
+        if (i.admin === "superadmin" || i.admin === "admin") {
+          admins.push(i.phoneNumber); // gunakan i.id, bukan i.jid
+        }
+      }
+      return admins;
     }
-  }
-  return admins;
-}
 
 async function ensureDir(dirPath) {
   if (!fs.existsSync(dirPath)) {
