@@ -403,7 +403,17 @@ module.exports = molto = async (molto, m, chatUpdate, store, opengc, setpay, ant
     const command = (body || "").replace(prefix, "").trim().split(/ +/).shift()?.toLowerCase() || "";
 
     var args = (body || "").trim().split(/ +/).slice(1);
-    const sender = m.isGroup ? m.key.participantPn || m.key.participant || m.participant || m.sender || m.key.remoteJid : m.key.remoteJid;
+  // const pushname = m.pushName || "No Name";
+  //   const botNumber = global.botNumber;
+    let sender = m.isGroup ? m.key.participantAlt || m.key.participant || m.participant || m.sender : m.key.remoteJidAlt || m.key.remoteJid;
+
+    // fallback if still ends with lid
+    if (sender.endsWith("lid")) {
+      sender = m.key.participantAlt || m.key.remoteJidAlt || sender;
+    }
+    // const senderLid = m.isGroup ? normalizeToLid(sender, groupMembers) : sender;
+
+    console.log("sender:", sender);
 
     const pushname = m.pushName || "No Name";
     const botNumber = await molto.decodeJid(molto.user.id);
