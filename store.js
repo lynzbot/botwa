@@ -719,11 +719,11 @@ user.afkReason = ''
       }
 
 
-    const targetId1 = m.chat;
-     let penyewa1 = sewa.find((x) => x.id === targetId1);
-     if (!penyewa1) {
-      console.log("No sewa record found for this chat.");
-    } else {
+    // const targetId1 = m.chat;
+    //  let penyewa1 = sewa.find((x) => x.id === targetId1);
+    //  if (!penyewa1) {
+    //   console.log("No sewa record found for this chat.");
+    // } else {
     switch (command) {
       case "owner":
       case "creator":
@@ -4471,7 +4471,7 @@ jika melewati akan otomatis cancel`;
             await m.reply(util.format(err));
           }
         }
-    }
+    
   }
     // const el = body.replace(prefix, "").trim().toLowerCase();
     // switch (el) {
