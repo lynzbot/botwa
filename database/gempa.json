@@ -1,0 +1,182 @@
+[
+  {
+    "waktu": "22 Jan 2025  10:12:06 WIB",
+    "lintang": "6.72 LS",
+    "bujur": "106.57 BT",
+    "magnitudo": "2,6",
+    "kedalaman": "9 Km",
+    "wilayah": "Pusat gempa berada di darat 28km barat daya Kota Bogor",
+    "warning": []
+  },
+  {
+    "waktu": "22 Jan 2025  10:09:34 WIB",
+    "lintang": "6.73 LS",
+    "bujur": "106.59 BT",
+    "magnitudo": "2,7",
+    "kedalaman": "10 Km",
+    "wilayah": "Pusat gempa berada di darat 27km barat daya Kota Bogor",
+    "warning": []
+  },
+  {
+    "waktu": "21 Jan 2025  21:55:34 WIB",
+    "lintang": "3.41 LS",
+    "bujur": "119.10 BT",
+    "magnitudo": "2,0",
+    "kedalaman": "11 Km",
+    "wilayah": "Pusat gempa berada di darat 8 km barat daya Polewali Mandar",
+    "warning": []
+  },
+  {
+    "waktu": "20 Jan 2025  10:12:06 WIB",
+    "lintang": "6.72 LS",
+    "bujur": "106.57 BT",
+    "magnitudo": "2,6",
+    "kedalaman": "9 Km",
+    "wilayah": "Pusat gempa berada di darat 28km barat daya Kota Bogor",
+    "warning": []
+  },
+  {
+    "waktu": "18 Jan 2025  15:37:45 WIB",
+    "lintang": "0.05 LU",
+    "bujur": "126.68 BT",
+    "magnitudo": "4,8",
+    "kedalaman": "21 Km",
+    "wilayah": "Pusat gempa berada di laut 109 km barat daya Tidore",
+    "warning": []
+  },
+  {
+    "waktu": "18 Jan 2025  00:44:08 WIB",
+    "lintang": "7.28 LS",
+    "bujur": "106.49 BT",
+    "magnitudo": "4,3",
+    "kedalaman": "38 Km",
+    "wilayah": "Pusat gempa berada di darat 33 km barat daya Kab. Sukabumi",
+    "warning": []
+  },
+  {
+    "waktu": "17 Jan 2025  20:52:16 WIB",
+    "lintang": "7.34 LS",
+    "bujur": "107.57 BT",
+    "magnitudo": "2,9",
+    "kedalaman": "7 Km",
+    "wilayah": "Pusat gempa berada di darat 35 km tenggara Kab. Bandung",
+    "warning": []
+  },
+  {
+    "waktu": "17 Jan 2025  19:58:23 WIB",
+    "lintang": "8.48 LS",
+    "bujur": "123.32 BT",
+    "magnitudo": "2,1",
+    "kedalaman": "12 Km",
+    "wilayah": "Pusat gempa berada di darat 18 km barat daya Lembata",
+    "warning": []
+  },
+  {
+    "waktu": "17 Jan 2025  18:57:38 WIB",
+    "lintang": "8.39 LS",
+    "bujur": "123.36 BT",
+    "magnitudo": "3,0",
+    "kedalaman": "9 Km",
+    "wilayah": "Pusat gempa berada di laut 16 km barat laut Lembata",
+    "warning": []
+  },
+  {
+    "waktu": "16 Jan 2025  20:17:34 WIB",
+    "lintang": "7.70 LS",
+    "bujur": "117.48 BT",
+    "magnitudo": "4,9",
+    "kedalaman": "11 Km",
+    "wilayah": "Pusat gempa berada di laut 88 km timur laut Sumbawa",
+    "warning": []
+  },
+  {
+    "waktu": "16 Jan 2025  08:41:51 WIB",
+    "lintang": "8.39 LS",
+    "bujur": "113.75 BT",
+    "magnitudo": "3,5",
+    "kedalaman": "20 Km",
+    "wilayah": "Pusat gempa berada di darat 25 km Tenggara Jember",
+    "warning": []
+  },
+  {
+    "waktu": "15 Jan 2025  21:10:22 WIB",
+    "lintang": "3.34 LU",
+    "bujur": "96.75 BT",
+    "magnitudo": "4,0",
+    "kedalaman": "32 Km",
+    "wilayah": "Pusat gempa berada di laut 55 km barat laut Kab. Aceh Selatan",
+    "warning": []
+  },
+  {
+    "waktu": "15 Jan 2025  17:10:13 WIB",
+    "lintang": "7.82 LS",
+    "bujur": "107.28 BT",
+    "magnitudo": "3,6",
+    "kedalaman": "29 Km",
+    "wilayah": "Pusat gempa berada di laut 92 km barat daya Kab. Bandung",
+    "warning": []
+  },
+  {
+    "waktu": "14 Jan 2025  23:16:59 WIB",
+    "lintang": "8.88 LS",
+    "bujur": "118.66 BT",
+    "magnitudo": "4,8",
+    "kedalaman": "10 Km",
+    "wilayah": "Pusat gempa berada di laut 44 km Tenggara Dompu",
+    "warning": []
+  },
+  {
+    "waktu": "14 Jan 2025  02:35:40 WIB",
+    "lintang": "8.23 LS",
+    "bujur": "116.40 BT",
+    "magnitudo": "3,2",
+    "kedalaman": "13 Km",
+    "wilayah": "Pusat gempa berada di darat 30 km timur laut Lombok Utara",
+    "warning": []
+  },
+  {
+    "waktu": "13 Jan 2025  19:54:38 WIB",
+    "lintang": "2.70 LS",
+    "bujur": "139.68 BT",
+    "magnitudo": "5,4",
+    "kedalaman": "27 Km",
+    "wilayah": "Pusat gempa berada di darat 52 Km barat laut Lereh-Jayapura",
+    "warning": []
+  },
+  {
+    "waktu": "12 Jan 2025  09:52:08 WIB",
+    "lintang": "8.28 LS",
+    "bujur": "110.27 BT",
+    "magnitudo": "4,4",
+    "kedalaman": "20 Km",
+    "wilayah": "Pusat gempa berada di laut 43 km barat daya Bantul",
+    "warning": []
+  },
+  {
+    "waktu": "12 Jan 2025  09:40:19 WIB",
+    "lintang": "8.04 LS",
+    "bujur": "120.50 BT",
+    "magnitudo": "3,5",
+    "kedalaman": "13 Km",
+    "wilayah": "Pusat gempa berada di laut 63 km timur laut Ruteng, Manggarai",
+    "warning": []
+  },
+  {
+    "waktu": "12 Jan 2025  04:03:05 WIB",
+    "lintang": "0.32 LS",
+    "bujur": "99.94 BT",
+    "magnitudo": "4,3",
+    "kedalaman": "20 Km",
+    "wilayah": "Pusat gempa berada di darat 10 km barat daya Agam",
+    "warning": []
+  },
+  {
+    "waktu": "12 Jan 2025  00:34:07 WIB",
+    "lintang": "7.23 LS",
+    "bujur": "107.70 BT",
+    "magnitudo": "2,2",
+    "kedalaman": "6 Km",
+    "wilayah": "Pusat gempa berada di darat 21 km barat daya Kabupaten Garut",
+    "warning": []
+  }
+]
