@@ -236,7 +236,7 @@ async function Botstarted() {
     phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Please type your WhatsApp number \nFor example: +62xxx : `)));
     phoneNumber = phoneNumber.replace(/[^0-9]/g, "");
 
-   const code = await MikiBot.requestPairingCode(phoneNumber, 'MIKIBOTZ')
+   const code = await molto.requestPairingCode(phoneNumber, 'MIKIBOTZ')
 		console.log(`Pairing code: ${code}`)
 
     setTimeout(async () => {
