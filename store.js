@@ -119,31 +119,7 @@ function saveToJSON(data) {
 }
 
 // Fungsi untuk membuat file Excel dari JSON
-function createExcelFile() {
-  // Baca data dari JSON
-  const fileContent = fs.readFileSync(jsonFilePath, "utf-8");
-  const jsonData = JSON.parse(fileContent);
 
-  // Format data untuk Excel
-  const excelData = jsonData.map((item) => [item.namaTempat, item.alamat, item.bulan, item.wisatawanLokal, item.wisatawanAsing]);
-
-  // Tambahkan header
-  const header = ["Nama Daya Tarik Wisata", "Alamat", "Bulan", "Jumlah Wisatawan Indonesia", "Jumlah Wisatawan Asing"];
-  excelData.unshift(header); // Tambahkan header di baris pertama
-
-  // Buat worksheet dari data
-  const worksheet = xlsx.utils.aoa_to_sheet(excelData);
-
-  // Buat workbook dan tambahkan worksheet
-  const workbook = xlsx.utils.book_new();
-  xlsx.utils.book_append_sheet(workbook, worksheet, "Data Wisata");
-
-  // Simpan file Excel
-  const excelFilePath = path.join(__dirname, "database", "dataExcel.xlsx");
-  xlsx.writeFile(workbook, excelFilePath);
-
-  return excelFilePath;
-}
 
 const afkFilePath = "./database/afk_user.json";
 

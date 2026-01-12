@@ -15,6 +15,7 @@ const {
   jidDecode,
   getAggregateVotesInPollMessage,
   proto,
+  Browsers
 } = require("@whiskeysockets/baileys");
 const pino = require("pino");
 const chalk = require("chalk");
@@ -224,7 +225,7 @@ async function Botstarted() {
     printQRInTerminal: !pairingCode,
     version: version,
     auth: state,
-    browser: ["Ubuntu", "Chrome", "20.0.04"],
+    browser: Browsers.macOS("Safari")
   });
 
   if (pairingCode && !molto.authState.creds.registered) {
@@ -235,9 +236,8 @@ async function Botstarted() {
     phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Please type your WhatsApp number \nFor example: +62xxx : `)));
     phoneNumber = phoneNumber.replace(/[^0-9]/g, "");
 
-    // const code = await molto.requestPairingCode(phoneNumber)
-    // console.log(`Pairing code: ${code}`)
-    // }
+   const code = await MikiBot.requestPairingCode(phoneNumber, 'MIKIBOTZ')
+		console.log(`Pairing code: ${code}`)
 
     setTimeout(async () => {
       let code = await molto.requestPairingCode(phoneNumber);
