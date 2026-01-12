@@ -222,30 +222,30 @@ async function Botstarted() {
   const molto = makeWASocket({
     syncFullHistory: false,
     logger: pino({ level: "silent" }),
-    printQRInTerminal: true,
-    // printQRInTerminal: !pairingCode,
+    // printQRInTerminal: true,
+    printQRInTerminal: !pairingCode,
     version: version,
     auth: state,
     browser: Browsers.macOS("Safari")
   });
 
-  // if (pairingCode && !molto.authState.creds.registered) {
-  //   if (useMobile) throw new Error("Cannot use pairing code with mobile api");
+  if (pairingCode && !molto.authState.creds.registered) {
+    if (useMobile) throw new Error("Cannot use pairing code with mobile api");
 
-  //   let phoneNumber;
+    let phoneNumber;
 
-  //   phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Please type your WhatsApp number \nFor example: +62xxx : `)));
-  //   phoneNumber = phoneNumber.replace(/[^0-9]/g, "");
+    phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Please type your WhatsApp number \nFor example: +62xxx : `)));
+    phoneNumber = phoneNumber.replace(/[^0-9]/g, "");
 
-  //  const code = await molto.requestPairingCode(phoneNumber, 'MIKIBOTZ')
-	// 	console.log(`Pairing code: ${code}`)
+   const code = await molto.requestPairingCode(phoneNumber, 'MIKIBOTZ')
+		console.log(`Pairing code: ${code}`)
 
-  //   setTimeout(async () => {
-  //     let code = await molto.requestPairingCode(phoneNumber);
-  //     code = code?.match(/.{1,4}/g)?.join("-") || code;
-  //     console.log(chalk.black(chalk.bgGreen(`Your Pairing Code : `)), chalk.black(chalk.white(code)));
-  //   }, 3000);
-  // }
+    setTimeout(async () => {
+      let code = await molto.requestPairingCode(phoneNumber);
+      code = code?.match(/.{1,4}/g)?.join("-") || code;
+      console.log(chalk.black(chalk.bgGreen(`Your Pairing Code : `)), chalk.black(chalk.white(code)));
+    }, 3000);
+  }
 
   /*
  async function Botstarted() {
