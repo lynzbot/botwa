@@ -1,12 +1,12 @@
 const fs = require('fs')
 
-global.namaBot = "Mikibot"
-global.namaowner = "Moldy"
+global.namaBot = "Lynzbot"
+global.namaowner = "Lynze"
 global.footer_text = ''
 global.pp_bot = fs.readFileSync("./image/foto.jpg")
 global.qris = fs.readFileSync("./image/qris.jpeg")
-global.owner = ['6281340930744', '79995547488']
-global.csStore = '6281340930744'
+global.owner = ['628159962355']
+global.csStore = '628159962355'
 global.sessionName = 'session'
 global.prefa = ['-_-']
 global.lolkey = "fa51036bf0d730ba76cf2e64"

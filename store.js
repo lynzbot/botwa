@@ -755,7 +755,6 @@ user.afkReason = ''
 ╰──────────◇
 
 ╭┈┈⟬ *MENU UPDATE* ⟭
-┆❐ .sewabot
 ┆❐ .ceknomor
 ┆❐ .fb
 ┆❐ .mcgg
@@ -795,29 +794,10 @@ user.afkReason = ''
 
 ╭┈┈⟬ *MENU STORE* ⟭
 ┆❐ .list
-┆❐ .jeda
 ┆❐ .dellist
 ┆❐ .addlist
 ┆❐ .updatelist
 ┆❐ .tourl >> link gambar
-╰──────────◇
-
-╭┈┈⟬ *PROSES & DONE* ⟭
-┆❐ .done
-┆❐ .proses
-┆❐ .setdone
-┆❐ .setproses
-┆❐ .delsetdone
-┆❐ .changedone
-┆❐ .delsetproses
-┆❐ .changeproses
-╰──────────◇
-
-╭┈┈⟬ *BOT* ⟭
-┆❐ .bot
-┆❐ .setbot
-┆❐ .delsetbot
-┆❐ .updatesetbot
 ╰──────────◇
 
 ╭┈┈⟬ *OPEN & CLOSE* ⟭
@@ -832,27 +812,18 @@ user.afkReason = ''
 ╰──────────◇
 
 ╭┈┈⟬ *MENU GROUP* ⟭
+┆❐ .done
+┆❐ .proses
 ┆❐ .kick
 ┆❐ .linkgc
-┆❐ .setleft
 ┆❐ .antilink
 ┆❐ .hidetag
 ┆❐ .demote
-┆❐ .setdesk
 ┆❐ .antilink2
-┆❐ .goodbye
 ┆❐ .promote
-┆❐ .ceksewa
-┆❐ .welcome
-┆❐ .delsetleft
 ┆❐ .antiwame
-┆❐ .changeleft
-┆❐ .setnamegc
 ┆❐ .resetlinkgc
 ┆❐ .antiwame2
-┆❐ .setwelcome
-┆❐ .delsetwelcome
-┆❐ .changewelcome
 ╰──────────◇
 
 ╭┈┈⟬ *MENU STALK* ⟭
@@ -865,19 +836,9 @@ user.afkReason = ''
 ┆❐ .cekpb
 ┆❐ .cekaov
 ┆❐ .cekcodm
-┆❐ .cekpln
-┆❐ .cekovo
-┆❐ .cekdana
-┆❐ .cekbank
-┆❐ .cekgopay
-┆❐ .ceklinkaja
-┆❐ .cekshopee
 ╰──────────◇
 
 ╭┈┈⟬ *MENU OWNER* ⟭
-┆❐ .delsewa
-┆❐ .listsewa
-┆❐ .addsewa
 ┆❐ .backupfile
 ┆❐ .restart
 ╰──────────◇`);
