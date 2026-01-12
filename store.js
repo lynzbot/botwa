@@ -800,18 +800,9 @@ user.afkReason = ''
 ┆❐ .tourl >> link gambar
 ╰──────────◇
 
-╭┈┈⟬ *OPEN & CLOSE* ⟭
+╭┈┈⟬ *MENU GROUP* ⟭
 ┆❐ .open
 ┆❐ .close
-┆❐ .setopen
-┆❐ .setclose
-┆❐ .delsetopen
-┆❐ .delsetclose
-┆❐ .changeopen
-┆❐ .changeclose
-╰──────────◇
-
-╭┈┈⟬ *MENU GROUP* ⟭
 ┆❐ .done
 ┆❐ .proses
 ┆❐ .kick
@@ -4471,7 +4462,7 @@ jika melewati akan otomatis cancel`;
             await m.reply(util.format(err));
           }
         }
-    
+
   }
     // const el = body.replace(prefix, "").trim().toLowerCase();
     // switch (el) {
