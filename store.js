@@ -93,6 +93,7 @@ const { translate } = require("bing-translate-api");
 const { remini, remini2 } = require("./lib/upscale");
 const { mooCountry } = require("./lib/region.js");
 const ocean = require("./lib/src/scraper/ocean.js");
+const { videoenhancer } = require("./lib/hdvid.js");
 global.imgbbKey = "3a99030b56c5b2e42b299638a3aac17e";
 let botState = null;
 // const Upscaler = require("upscaler");
@@ -1119,6 +1120,30 @@ user.afkReason = ''
         break;
       }
 
+      case "hdvid" : {
+          if (!m.quoted || !/video/.test(m.quoted.mimetype)) {
+    return m.reply('Reply video dengan caption: enhance')
+  }
+
+  m.reply('⏳ Video sedang diproses, mohon tunggu...')
+
+  const buffer = await m.quoted.download()
+  const filePath = `./tmp/${Date.now()}.mp4`
+
+  fs.writeFileSync(filePath, buffer)
+
+  const result = await videoenhancer(filePath, '4k')
+  console.log(result)
+
+  await molto.sendMessage(m.chat, {
+    video: { url: result.output_url },
+    caption: '✅ Video berhasil di-enhance'
+  })
+
+  fs.unlinkSync(filePath)
+      }
+      break;
+
       case "backupfile":
         {
           if (m.chat !== "120363419285510001@g.us") return reply("Backup file tidak berlaku di grup ini!");
@@ -1175,6 +1200,7 @@ user.afkReason = ''
         }
         break;
       case "menu":
+        case "list" :
         {
           if (db_respon_list.length === 0) return m.reply(`*Belum ada list message di database*`);
           if (!isAlreadyResponListGroup(m.isGroup ? m.chat : botNumber, db_respon_list)) return m.reply(`*Belum ada list message yang terdaftar di group/chat ini*`);
@@ -1218,42 +1244,6 @@ user.afkReason = ''
             ],
           });
 
-          // Membuat pesan dengan menu interaktif
-          let msg = generateWAMessageFromContent(
-            m.chat,
-            {
-              viewOnceMessage: {
-                message: {
-                  messageContextInfo: {
-                    deviceListMetadata: {},
-                    deviceListMetadataVersion: 2,
-                  },
-                  interactiveMessage: proto.Message.InteractiveMessage.create({
-                    body: proto.Message.InteractiveMessage.Body.create({
-                      text: `Halo @${sender.split("@")[0]} 👋\n\nSilahkan pilih item yang kamu butuhkan`,
-                    }),
-                    footer: proto.Message.InteractiveMessage.Footer.create({
-                      text: footer_text, // Pastikan footer_text didefinisikan di tempat lain
-                    }),
-                    header: proto.Message.InteractiveMessage.Header.create({
-                      title: ``,
-                      subtitle: "",
-                      hasMediaAttachment: false,
-                    }),
-                    nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-                      buttons: [
-                        {
-                          name: "single_select",
-                          buttonParamsJson: buttonParamsJson,
-                        },
-                      ],
-                    }),
-                  }),
-                },
-              },
-            },
-            {}
-          );
 
           await molto.relayMessage(
             m.chat,
@@ -1397,7 +1387,9 @@ user.afkReason = ''
             .catch((err) => m.reply("*Terjadi kesalahan*"));
         }
         break;
-      case "promote":
+
+
+        case "promote":
         {
           if (!m.isGroup) return m.reply("🤖 : 𝖿𝗂𝗍𝗎𝗋 𝗄𝗁𝗎𝗌𝗎𝗌 𝗀𝗋𝗈𝗎𝗉");
           if (!isAdmins) return m.reply("🤖 : 𝖿𝗂𝗍𝗎𝗋 𝗄𝗁𝗎𝗌𝗎𝗌 𝖺𝖽𝗆𝗂𝗇");
@@ -1447,7 +1439,9 @@ user.afkReason = ''
           m.reply(`https://chat.whatsapp.com/${response}\n${groupMetadata.subject}`);
         }
         break;
-      case "setppgroup":
+
+
+        case "setppgroup":
       case "setppgrup":
       case "setppgc":
         {
@@ -1476,7 +1470,9 @@ user.afkReason = ''
             .catch((err) => reply("Terjadi kesalahan"));
         }
         break;
-      case "bot":
+
+
+        case "bot":
         {
           var bot = `eyyoo!!`;
           const getTextB = getTextSetBot(m.isGroup ? m.chat : botNumber, set_bot);
@@ -1488,7 +1484,9 @@ user.afkReason = ''
           }
         }
         break;
-      case "updatesetbot":
+
+
+        case "updatesetbot":
       case "setbot":
       case "changebot":
         {
@@ -1511,7 +1509,9 @@ user.afkReason = ''
           reply(`Sukses delete set bot`);
         }
         break;
-      case "updatelist":
+
+
+        case "updatelist":
       case "update":
         {
           const imgbb = require("imgbb-uploader");
@@ -1548,6 +1548,8 @@ user.afkReason = ''
             .catch((err) => reply("Error"));
         }
         break;
+
+        /*
       case "tambah":
         {
           if (!text.includes("+")) return m.reply(`Gunakan dengan cara ${command} *angka* + *angka*\n\n_Contoh_\n\n${command} 1+2`);
@@ -1670,7 +1672,10 @@ user.afkReason = ''
           m.reply(`*Sukses delete setdone*`);
         }
         break;
-      case "p":
+*/
+
+
+        case "p":
       case "proses":
         {
           if (!(m.isGroup ? isAdmins : isCreator)) return m.reply("*Fitur Khusus admin*");
@@ -1730,7 +1735,9 @@ user.afkReason = ''
           }
         }
         break;
-      case "welcome":
+
+/*
+        case "welcome":
         {
           if (!m.isGroup) return m.reply("Fitur Khusus Group!");
           if (!isAdmins) return m.reply("Fitur Khusus admin!");
@@ -1837,7 +1844,9 @@ user.afkReason = ''
           reply(`Sukses delete set left`);
         }
         break;
-      case "antiwame":
+*/
+
+        case "antiwame":
       case "aw1":
         {
           if (!m.isGroup) return m.reply("Fitur Khusus Group!");
@@ -1881,26 +1890,8 @@ user.afkReason = ''
           }
         }
         break;
-      case "ts": {
-        const toMs = require("ms");
 
-        const args = text.split(" ");
-        const timenya = args[0];
-        if (!timenya) return reply("Masukkan durasinya!");
-
-        let duration;
-        try {
-          duration = toMs(timenya);
-        } catch (e) {
-          return reply("Durasi yang dimasukkan tidak valid!");
-        }
-
-        if (!duration) return reply("Durasi yang dimasukkan tidak valid!");
-
-        reply(toString(Date.now() + duration));
-        break;
-      }
-
+/*
       case "addsewa":
         {
           if (!isCreator) return m.reply("> fitur khusus owner");
@@ -1970,7 +1961,7 @@ user.afkReason = ''
           molto.sendMessage(m.chat, { text: list_sewa_list }, { quoted: m });
         }
         break;
-
+*/
       case "open":
       case "buka":
         {
@@ -2192,12 +2183,13 @@ user.afkReason = ''
           m.reply(runtime(process.uptime()));
         }
         break;
-      case "sewa":
-        {
-          reply(`*Silahkan ketik \`sewabot\` di chat bot*`);
-        }
-        break;
+      // case "sewa":
+      //   {
+      //     reply(`*Silahkan ketik \`sewabot\` di chat bot*`);
+      //   }
+      //   break;
 
+      /*
       case "sewabot": {
         if (m.isGroup) return reply(`*Fitur khusus chat pribadi*`);
         var url = args[0];
@@ -2271,6 +2263,7 @@ jika melewati akan otomatis cancel`;
         break;
       }
       // START TOLS CEK NICK //
+      */
 
       case "cekff": {
         const id = args[0];
