@@ -4278,9 +4278,9 @@ jika melewati akan otomatis cancel`;
 
        case "orkut": {
 const OK_CONSTANT = {
-   app_reg_id: appRegID,
-    phone_uuid: phone_uuid,
-    phone_model: phone_model,
+   app_reg_id: "e5aCENGrQOWvhQWYnv-uNc:APA91bFj3O_mv5Nf_2SM4Duz4Z8Ug3nBNaHlgodlY92CBuNIA9xmc0Dahev5xxqssPmnTdcie4mlhiG9ZAE1iCe1QbyhxcUyGXlenJxiUaXdfm1rklOEo9k",
+    phone_uuid: "e5aCENGrQOWvhQWYnv-uNc",
+    phone_model: 'sdk_gphone64_x86_64',
     phone_android_version: "16",
     app_version_code: "250811",
     app_version_name: "25.08.11",
