@@ -4276,6 +4276,111 @@ jika melewati akan otomatis cancel`;
         break;
       }
 
+       case "orkut": {
+        // if (!isOwner) return reply(mess.owner);
+        const sub = args[0]?.toLowerCase();
+        let data1 = args[1];
+        let data2 = args[2];
+
+        switch (sub) {
+          case "login":
+            try {
+              if (!data1 || !data2) {
+                return reply("Masukkan username dan password yang valid.\nContoh : *orkut login username password*");
+              }
+              const loginData = await orkutLogin(data1, data2);
+              console.log(loginData);
+              if (loginData.success) {
+                reply(`Silahkan cek otp yang terkirim di email : ${loginData.results.otp_value}\nLalu masukkan otp dengan ketik \`orkut otp [kode]\``);
+              } else {
+                reply(loginData.message);
+              }
+            } catch (error) {
+              console.error("Error during Orkut login:", error);
+              reply("⚠️ Terjadi kesalahan saat melakukan login Orkut.");
+            }
+            break;
+
+          // case "otp":
+          //   {
+          //     const filePath = "./SETTING/DB/orkut.json";
+          //     const dirPath = require("path").dirname(filePath);
+          //     if (!data1) {
+          //       return reply("Masukkan kode OTP yang valid.\nContoh : *orkut otp 123456*");
+          //     }
+          //     try {
+          //       await ensureDir(dirPath);
+          //       const otpLogin = await orkutLoginOTP(data1);
+          //       console.log(otpLogin);
+          //       let otpMsg;
+          //       if (otpLogin.success) {
+          //         const { otp, id, name, username, balance } = otpLogin.results;
+          //         const waitingMsg = `Sedang memproses login Orkut, harap tunggu...`;
+          //         reply(waitingMsg);
+          //         // Simpan data ke file JSON
+
+          //         fs.writeFileSync(filePath, JSON.stringify(otpLogin.results, null, 2));
+          //         await sleep(2000);
+          //         // Kirim pesan sukses
+
+          //         otpMsg = `『 *Login Berhasil* 』\n\n➠ ID : ${id}\n➠ Name : ${name}\n➠ Username : ${username}\n➠ Balance : ${balance}`;
+          //         Mikibot.sendMessage(m.chat, { text: otpMsg }, { quoted: m, edit: waitingMsg.key });
+          //       } else {
+          //         reply(otpLogin.message);
+          //       }
+          //     } catch (error) {
+          //       console.error("Error during Orkut OTP login:", error);
+          //       reply("⚠️ Terjadi kesalahan saat melakukan login OTP Orkut.");
+          //     }
+          //   }
+          //   break;
+
+          // case "profile":
+          //   {
+          //     try {
+          //       const getProfile = await orkutProfile();
+          //       console.log(getProfile);
+          //       if (!getProfile.success) {
+          //         return reply(getProfile.message);
+          //       } else {
+          //         const resultsProfile = getProfile.account.results;
+          //         console.log(resultsProfile);
+          //         const { id, username, name, email, phone, balance, balance_str, qris_balance, qris_balance_str, qrcode, qris, qris_name } = resultsProfile;
+          //         reply(
+          //           `*Orkut Profile*\n\n➠ ID : ${id}\n➠ Username : ${username}\n➠ Name : ${name}\n➠ Email : ${email}\n➠ Phone : ${phone}\n➠ Balance : ${balance_str}\n➠ QRIS Balance : ${qris_balance_str}\n➠ QRIS : ${qris}\n➠ QRIS Name : ${qris_name}\n*QR Code*\n${qrcode}`
+          //         );
+          //       }
+          //     } catch (error) {
+          //       console.error("Error reading Orkut profile:", error);
+          //       reply("⚠️ Terjadi kesalahan saat mengambil data profil Orkut.");
+          //     }
+          //   }
+          //   break;
+
+          // case "wd":
+          //   {
+          //     try {
+          //       const withdrawAmount = await orkutWithDraw(data1);
+          //       console.log(withdrawAmount);
+          //       if (!withdrawAmount.success) {
+          //         return reply(withdrawAmount.message);
+          //       } else {
+          //         return reply(withdrawAmount.message);
+          //       }
+          //     } catch (error) {
+          //       console.error("Error during Orkut withdrawal:", error);
+          //       reply("⚠️ Terjadi kesalahan saat melakukan penarikan Orkut.");
+          //     }
+          //   }
+          //   break;
+
+          default:
+            reply(`Ketik salah satu menu di bawah ini\nContoh : *${command} OTP*\n\n` + `➠ *LOGIN*\n` + `➠ *OTP*\n` + `➠ *PROFILE*\n` + `➠ *WD*\n` + `_*© 2022 MikiStore | MikiBot*_`);
+            break;
+        }
+        break;
+      }
+
       default:
         // if (
         //   m.message.extendedTextMessage &&
