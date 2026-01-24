@@ -4287,7 +4287,7 @@ const OK_CONSTANT = {
     app_version_name: "25.08.11",
     ui_mode: "light",
 }
-        async function orkutLogin() {
+        async function orkutLogin(usernameOrkut, passwordOrkut) {
   const data = qs.stringify({
     username: usernameOrkut,
     password: passwordOrkut,
