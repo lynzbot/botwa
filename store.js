@@ -4277,6 +4277,40 @@ jika melewati akan otomatis cancel`;
       }
 
        case "orkut": {
+const OK_CONSTANT = {
+   app_reg_id: appRegID,
+    phone_uuid: phone_uuid,
+    phone_model: phone_model,
+    phone_android_version: "16",
+    app_version_code: "250811",
+    app_version_name: "25.08.11",
+    ui_mode: "light",
+}
+        async function orkutLogin() {
+  const data = qs.stringify({
+    username: usernameOrkut,
+    password: passwordOrkut,
+    ...OK_CONSTANT
+  });
+  const config = {
+    method: "post",
+    url: `https://app.orderkuota.com/api/v2/login`,
+    headers: {
+      Host: "app.orderkuota.com",
+      "User-Agent": "okhttp/4.12.0",
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    data: data,
+  };
+
+  try {
+    const response = await axios(config);
+    return response.data;
+  } catch (error) {
+    console.error("Error ordering kuota:", error);
+    throw error;
+  }
+}
         // if (!isOwner) return reply(mess.owner);
         const sub = args[0]?.toLowerCase();
         let data1 = args[1];
