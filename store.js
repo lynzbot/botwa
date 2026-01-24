@@ -4277,6 +4277,7 @@ jika melewati akan otomatis cancel`;
       }
 
        case "orkut": {
+        const qs = require('qs')
 const OK_CONSTANT = {
    app_reg_id: "e5aCENGrQOWvhQWYnv-uNc:APA91bFj3O_mv5Nf_2SM4Duz4Z8Ug3nBNaHlgodlY92CBuNIA9xmc0Dahev5xxqssPmnTdcie4mlhiG9ZAE1iCe1QbyhxcUyGXlenJxiUaXdfm1rklOEo9k",
     phone_uuid: "e5aCENGrQOWvhQWYnv-uNc",
